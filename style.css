@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #eef2f7;
+    color: #1f2933;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background: #0f172a;
+    color: #f1f5f9;
+}
+
+header {
+    background: linear-gradient(135deg, #2563eb, #7dd3fc);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+}
+
+header h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+#darkModeToggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #1e3a8a;
+    color: white;
+    transition: background 0.3s;
+}
+
+#darkModeToggle:hover {
+    background: #2563eb;
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.accordion .card {
+    background: linear-gradient(120deg, #ffffff, #f0f4ff);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    cursor: pointer;
+}
+
+body.dark-mode .accordion .card {
+    background: linear-gradient(120deg, #1e293b, #0f172a);
+}
+
+.accordion .card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+}
+
+.card-header {
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #1e3a8a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    transition: color 0.3s;
+}
+
+body.dark-mode .card-header {
+    color: #7dd3fc;
+}
+
+.card-body {
+    padding: 0 20px 20px 20px;
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.card-body ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.icon {
+    font-size: 24px;
+    transition: transform 0.3s;
+}
+
+.card.open .icon {
+    transform: rotate(45deg);
+}
+
+footer {
+    background-color: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
